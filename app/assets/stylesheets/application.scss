@@ -20,15 +20,18 @@
    height: 100%;
  }
 
- .background-image {
-   min-height: 100vh;
-   background: url(/assets/1.jpg) no-repeat center center fixed;
-   background-size: cover;
- }
+
+
+
+.background-image{
+  min-height: 100vh;
+  background: url(/assets/1.jpg) no-repeat center center fixed;
+  background-size: cover;
+}
 
  .jumbotron{
-   background-color: transparent;
- }
+  background-color: transparent;
+}
 
  .jumbotron h1{
    font: weight 100;
