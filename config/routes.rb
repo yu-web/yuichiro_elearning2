@@ -6,10 +6,10 @@ Rails.application.routes.draw do
   root "staticpage#home"
   get '/signup',to: "users#new"
   get "/login", to: "sessions#new"
-  
+  delete "/logout", to: "sessions#destroy"
   
   resources :users
-  resources :sessions, only: :create
+  resources :sessions
 end
 
  
