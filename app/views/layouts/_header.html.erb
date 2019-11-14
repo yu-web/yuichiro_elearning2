@@ -23,19 +23,21 @@
 				Current user
 			</a>
 			<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-				<a class="dropdown-item" href="#">profile page</a>
-				<a class="dropdown-item" href="#">setting</a>
-				<a class="dropdown-item" href="#">logout</a>
+				<div><%= link_to "Profile page",class:"dropdown" %></div>
+          
+				<div><%= link_to "Profile setting","#",class:"dropdown" %></div>
+          
+				<div><%= link_to "Logout",logout_path,method: :delete,class:"dropdown" %></div>
+          
 			</div>
 		</li>
            
-		<%= link_to "Logout","#",class: "nav-link" %>
+		<div><%= link_to "Logout",logout_path,method: :delete,class: "nav-link" %></div>
           
 	<% else %>
 		<%= link_to "Home",root_path,class: "nav-link" %>
 		<%= link_to "Signup",signup_path,class: "nav-link" %>
 		<%= link_to "Login",login_path,class: "nav-link" %>
-
     <% end %>
 
 
