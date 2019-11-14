@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: 
+  email: 
+  password: 
+  password_confirm: 
+
+two:
+  name: 
+  email: 
+  password: 
+  password_confirm: 
