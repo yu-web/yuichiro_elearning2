@@ -1,0 +1,33 @@
+<div class="container">
+<h1>User profile page</h1>
+	<div class="row">
+		<div class="card bg-info col-4" style="width: 18rem;">
+		
+			<div class="card-body text-center">
+				<%= gravatar_for @user %>
+				<h5 class="card-title"><%= @user.name %></h5>
+				<p class="card-text"><%= @user.email %></p>
+				
+			</div>
+		</div>
+
+		<div class="col-auto">
+		</div>
+
+		<div class="card bg-info col-7" style="width: 18rem;">
+		
+			<div class="card-body text-center">
+				
+				<h5 class="card-title">Micropost</h5>
+				<p class="card-text"></p>
+				
+			</div>
+		</div>
+	</div>
+
+	
+</div>
+
+  		
+  
+          
