@@ -20,14 +20,14 @@
 
 		<li class="nav-item dropdown">
 			<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-				Current user
+				<%=current_user.name %>
 			</a>
 			<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-				<div><%= link_to "Profile page",class:"dropdown" %></div>
+				<div><%= link_to "Profile page",current_user,class:"dropdown-item" %></div>
           
-				<div><%= link_to "Profile setting","#",class:"dropdown" %></div>
+				<div><%= link_to "Profile setting","#",class:"dropdown-item" %></div>
           
-				<div><%= link_to "Logout",logout_path,method: :delete,class:"dropdown" %></div>
+				<div><%= link_to "Logout",logout_path,method: :delete,class:"dropdown-item" %></div>
           
 			</div>
 		</li>

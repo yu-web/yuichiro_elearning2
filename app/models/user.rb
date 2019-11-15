@@ -13,4 +13,13 @@ class User < ApplicationRecord
                                  uniqueness: {case_sensitive: false} #big or small letter no matter
   has_secure_password
   validates :password,length: {minimum:6},allow_nil:true
+
+
+
+
+
+  
+  
+  
+
 end
