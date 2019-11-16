@@ -25,7 +25,7 @@
 			<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 				<div><%= link_to "Profile page",current_user,class:"dropdown-item" %></div>
           
-				<div><%= link_to "Profile setting","#",class:"dropdown-item" %></div>
+				<div><%= link_to "Profile setting",edit_user_path(current_user),class:"dropdown-item" %></div>
           
 				<div><%= link_to "Logout",logout_path,method: :delete,class:"dropdown-item" %></div>
           
