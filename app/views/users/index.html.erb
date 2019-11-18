@@ -5,12 +5,13 @@
 </div>
 
 <div class="container">
+
 <div class="row">
 	<% @users.each do |user| %>
     <div class="col-6">
     	<div class="media mb-3">
         <%=gravatar_for(user) %>
-        	<div class="media-body">
+        	<div class="media-body delete_back">
         		<h5 class="pl-2 font-weight-bold"><%= link_to user.name,user %></h5>
           
           		<% if current_user.admin? %>
@@ -24,4 +25,3 @@
     </div>
   	<% end %>
   </div>
-</div>
