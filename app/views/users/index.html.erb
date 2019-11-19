@@ -14,11 +14,7 @@
         	<div class="media-body delete_back">
         		<h5 class="pl-2 font-weight-bold"><%= link_to user.name,user %></h5>
           
-          		<% if current_user.admin? %>
-            		<%= link_to "Delete", user_path(user),method: :delete,
-                                  class:"btn btn-outline-danger btn-sm float-right", 
-                                  data: { confirm: "Are you sure?"} %>
-          		<% end %>
+          		
           
         	</div>
       	</div>
