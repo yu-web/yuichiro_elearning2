@@ -1,0 +1,33 @@
+<h1 class="text-center mb-3">Administer Users</h1>
+<div class="paginate text-center">
+	<%= will_paginate @users %>
+</div>
+
+<div class="container">
+	<table class="table table-secondary">
+  <thead>
+    <tr>
+      
+      <th scope="col">Nmae</th>
+      <th scope="col">Email</th>
+      <th scope="col">Admin</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @users.each do |user| %>
+    <tr>
+      
+      <td><%= user.name %></td>
+      <td><%= user.email %></td>
+      <td>
+	  	<% if user.admin != true %>
+		  	<%= link_to "ADD",admin_user_path(user),method: :patch,class: "btn btn-dark btn-sm" %>
+		<% else %>
+			<%= link_to "DELETE",admin_user_path(user),method: :delete,class: "btn btn-dark btn-sm" %>
+		<% end %>
+	  </td>
+    </tr>
+   <% end %>
+  </tbody>
+</table>
+<div>

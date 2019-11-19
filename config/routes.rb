@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-
+  
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root "staticpage#home"
   get '/signup',to: "users#new"
@@ -10,6 +10,7 @@ Rails.application.routes.draw do
 
   namespace :admin do
     get "/home", to: "users#home"
+    resources :users
   end
 
   resources :users
