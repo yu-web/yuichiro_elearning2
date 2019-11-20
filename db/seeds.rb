@@ -19,3 +19,8 @@ User.create!(
     password: "password"
   )
 end
+
+Category.create!(
+  name: "English",
+  content: "learn important words",
+)
