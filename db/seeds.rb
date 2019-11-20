@@ -24,3 +24,5 @@ Category.create!(
   name: "English",
   content: "learn important words",
 )
+
+

@@ -1,0 +1,33 @@
+<h1 class="text-center mb-3">Administer Wordss</h1>
+
+<div class = "text-center new_cate_bt">
+	<%= link_to "New words","#",class: "btn btn-dark btn-lg" %>
+</div>
+
+<div class="paginate text-center">
+	<%= will_paginate @words %>
+</div>
+
+<div class="container">
+	<table class="table table-secondary">
+		<thead>
+			<tr>
+		
+				<th scope="col">Word</th>
+				<th scope="col">Answer</th>
+				<th scope="col">Settings</th>
+			</tr>
+		</thead>
+		<tbody>
+			<% @words.each do |word| %>
+				<tr>
+			
+					<td></td>
+					<td></td>
+					<td><%= link_to "Edit","#" %></td>
+          <td><%= link_to "Delete","#" %></td>
+				</tr>
+			<% end %>
+		</tbody>
+	</table>
+<div>
