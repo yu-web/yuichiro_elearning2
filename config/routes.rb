@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   namespace :admin do
     get "/home", to: "users#home"
     resources :users
+    resources :categories
   end
 
   resources :users
