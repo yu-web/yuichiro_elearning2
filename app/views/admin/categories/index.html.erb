@@ -22,10 +22,10 @@
 			<% @categories.each do |category| %>
 				<tr>
 			
-					<td><%= link_to category.name,"#" %></td>
+					<td><%= link_to category.name,admin_category_words_path(category.id) %></td>
 					<td><%= category.content %></td>
 					<td><%= link_to "Edit",edit_admin_category_path(category.id) %></td>
-          <td><%= link_to "Delete",admin_category_path(category.id),method: :delete %></td>
+          <td><%= link_to "Delete","#" %></td>
 				</tr>
 			<% end %>
 		</tbody>

@@ -12,7 +12,9 @@ Rails.application.routes.draw do
     get "/home", to: "users#home"
     get "categories/:id/edit",to: "categories#edit"
     resources :users
-    resources :categories
+    resources :categories do
+      resources :words
+    end
   end
 
   resources :users
