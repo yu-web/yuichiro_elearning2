@@ -1,6 +1,6 @@
 class Admin::CategoriesController < ApplicationController
   def index
-    @categories = Category.paginate(page: params[:page],per_page: 7)
+    @categories = Category.paginate(page: params[:page],per_page: 6)
   end
 
   def new
@@ -10,6 +10,7 @@ class Admin::CategoriesController < ApplicationController
   def create
     @category=Category.new(category_params)
     if @category.save
+      flash[:success] = "Successfully Create Category"
       redirect_to admin_categories_url
     else
       render "new"
@@ -32,6 +33,7 @@ class Admin::CategoriesController < ApplicationController
   def destroy
     @category = Category.find(params[:id])
     @category.destroy
+    flash[:success] = "Deleted"
     redirect_to admin_categories_url
   end
 
