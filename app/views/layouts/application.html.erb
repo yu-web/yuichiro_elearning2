@@ -12,6 +12,14 @@
   	<body>
   	<div class="background-image">
     	<%= render "layouts/header" %>
+
+		<% if flash.any? %>
+          <% flash.each do |type1,msg1| %>
+            <div class="alert alert-<%= type1 %>">
+              <div class="text-center"><%= msg1 %></div>
+            </div>
+          <% end %>
+      <% end %>
   
     	<%= yield %>
   	</div>
