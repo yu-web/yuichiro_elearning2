@@ -1,0 +1,28 @@
+<div class="col-6 mx-auto">
+<h1 class="text-center mb-3">Edit word of <%=  @category.name %> category</h1>
+
+<%= form_for [:admin,@category,@word] do |f| %>
+  
+    <div class="text-danger"><%= render "shared/error_messages", object: f.object %></div>
+    <div class="form-group text-center">
+    	<%= label_tag "Word" %>
+    	<%= f.text_field :content,class: "form-control" %>
+  	</div>
+
+   
+
+  	<div class="form-group text-center">
+    	<%= label_tag "choices" %>
+    	<%= f.fields_for :choices do |choice| %>
+        <%= choice.text_field :content,class: "form-control" %>
+        <%= choice.check_box :isCorrect %>
+        <p class="d-inline">This is the answer </p>
+      <% end %>
+  	</div>
+
+  
+  	<%= f.submit "Edit new words",class: "btn btn-success btn-block" %> 
+
+
+<% end %>
+</div>
