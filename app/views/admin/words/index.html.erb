@@ -23,10 +23,10 @@
 			<% @words.each do |word| %>
 				<tr>
 			
-					<td><%= word.content %></td>
+					<td><%= link_to word.content,"#" %></td>
 					<td><%= word.correct_answer %></td>
-					<td><%= link_to "Edit","#" %></td>
-          <td><%= link_to "Delete","#" %></td>
+					<td><%= link_to "Edit",edit_admin_category_word_path(@category.id,word.id) %></td>
+          <td><%= link_to "Delete",admin_category_word_path(@category.id,word.id),method: :delete %></td>
 				</tr>
 			<% end %>
 		</tbody>
