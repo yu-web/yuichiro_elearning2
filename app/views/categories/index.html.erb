@@ -1,24 +1,19 @@
 <h1 class="text-center mb-3">Lessons</h1>
 
 <div class="paginate text-center">
-	<%= will_paginate @categories %>
+    <%= will_paginate @categories %>
 </div>
 
 <div class="container">
-	<div class = "row caterow">
-		<% @categories.each do |category| %>
-
-		
-			<div class="card col-3 catecard rounded bg-light" style="width: 18rem; height: 12rem;">
-				
-				<div class="card-body text-center">
-					<h4 class="card-title"><%= category.name %></h4>
-					<p class="card-text"><%= category.content %></p>
-					<a href="#" class="btn btn-success">Start lesson</a>
-				</div>
-				
-			</div>
-		
-		<% end %>
-	</div>
+    <div class = "row caterow">
+        <% @categories.each do |category| %>
+            <div class="card col-3 catecard rounded bg-light" style="width: 18rem; height: 12rem;">
+                <div class="card-body text-center">
+                    <h4 class="card-title"><%= category.name %></h4>
+                    <p class="card-text"><%= category.content %></p>
+                    <a href="#" class="btn btn-success">Start lesson</a>
+                </div>
+            </div>
+        <% end %>
+    </div>
 </div>
