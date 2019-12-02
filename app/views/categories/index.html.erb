@@ -9,9 +9,16 @@
         <% @categories.each do |category| %>
             <div class="card col-3 catecard rounded bg-light" style="width: 18rem; height: 12rem;">
                 <div class="card-body text-center">
-                    <h4 class="card-title"><%= category.name %></h4>
+                    <h4 class="card-title"><%= category.name %> [<%= category.words.count %>]</h4>
                     <p class="card-text"><%= category.content %></p>
-                    <a href="#" class="btn btn-success">Start lesson</a>
+                    <% lesson =  current_user.lesson_taken(category.id) %>
+
+                    <% if lesson.nil? %>
+                        <%= link_to "start lesson",lessons_path(category_id: category.id),method: :post,class: "btn btn-primary" %>
+                    <% else %>
+                        <%= link_to "show result","#",class: "btn btn-secondary" %>
+                    <% end %>
+                    
                 </div>
             </div>
         <% end %>

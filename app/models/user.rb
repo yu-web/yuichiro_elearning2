@@ -14,9 +14,11 @@ class User < ApplicationRecord
   has_secure_password
   validates :password,length: {minimum:6},allow_nil:true
 
+  has_many :lessons, dependent: :destroy
 
-
-
+  def lesson_taken(cat_id)
+    lesson = lessons.find_by(category_id: cat_id)
+  end
 
   
   

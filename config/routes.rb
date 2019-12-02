@@ -17,9 +17,14 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :lessons do
+    resources :answers
+  end
+
   resources :users
   resources :sessions
   resources :categories
+   
 end
 
  

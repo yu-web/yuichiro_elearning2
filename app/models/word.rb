@@ -6,6 +6,7 @@ class Word < ApplicationRecord
   validates :content,presence:true,length:{maximum:30}
   validate :has_one_correct_answer
   validate :has_unique_choice
+  has_many :answers
 
   def has_unique_choice    
       
@@ -24,6 +25,9 @@ class Word < ApplicationRecord
   def correct_answer
     choices.find_by(isCorrect:true).try(:content)
   end
+
+  
+
 end
 
 
