@@ -16,7 +16,7 @@
                     <% if lesson.nil? %>
                         <%= link_to "start lesson",lessons_path(category_id: category.id),method: :post,class: "btn btn-primary" %>
                     <% else %>
-                        <%= link_to "show result","#",class: "btn btn-secondary" %>
+                        <%= link_to "show result",lesson_path(lesson.id),class: "btn btn-secondary" %>
                     <% end %>
                     
                 </div>
