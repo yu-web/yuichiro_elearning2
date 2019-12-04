@@ -6,7 +6,7 @@ class AnswersController < ApplicationController
 
     if @lesson.next_word.nil?
       @lesson.update(result: @lesson.lesson_result)
-      redirect_to root_url
+      redirect_to lesson_url(id: @lesson)
     end
   end
 
