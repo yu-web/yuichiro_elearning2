@@ -20,8 +20,30 @@ class User < ApplicationRecord
     lesson = lessons.find_by(category_id: cat_id)
   end
 
+  has_many :active_relationships, class_name: "Relationship",
+                                   foreign_key: "follower_id",
+                                   dependent: :destroy
+
+  has_many :passive_relationships, class_name: "Relationship",
+                                   foreign_key: "following_id",
+                                   dependent: :destroy
+
+  has_many :following,through: :active_relationships, source: :following
+  has_many :followers,through: :passive_relationships, source: :follower
   
-  
-  
+  #follow a user
+  def follow(other_user)
+    active_relationships.create(following_id: other_user.id)
+  end
+
+  #unfollows a user
+  def unfollow(other_user)
+    active_relationships.find_by(following_id: other_user.id).destroy
+  end
+
+  #Returs true if the curent user is following the other user.
+  def following?(other_user)
+    following.include?(other_user)
+  end
 
 end
