@@ -6,15 +6,32 @@
 				<div class="card-body text-center">
 					<%= gravatar_for @user %>
 					<h1><%= @user.name %></h1>
-					<%= @user.email %>
+					<%= @user.email %><br>
+					
+					<div>
+						
+						<div class="row mt-3">
+							<div class="col-6">
+								<p>followings</p><strong><%= @user.following.count %></strong>
+							</div>
+							<div class="col-6">
+								<p>followers</p><strong><%= @user.followers.count %></strong>
+							</div>
+						</div>
+						
+					</div>
+					<div>
+						<%= render "relationships/follow_button" %>
+					</div>
 				</div>
+				
 
 					<% if current_user.admin == true %>
 						<%= link_to "Admin lesson",admin_home_path,class: "btn btn-success btn-lg" %>
 					<% end %>
 			</div>	
 
-				
+				<div class="text-center"><%= link_to "back",users_path,class: "btn btn-dark btn-sm backbtn" %></div>
 
 		</div>
 
@@ -30,6 +47,6 @@
 
 		</div>
 	</div>
-
+	
 	
 </div>
