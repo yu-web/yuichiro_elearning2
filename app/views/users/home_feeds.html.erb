@@ -2,28 +2,22 @@
 <h1>Logged in user board</h1>
 	<div class="row">
 		<div class="col-4">
-			<div class="card mb-3 bg-info text-center">
+			<div class="card mb-3 bg-light text-center">
 				<div class="card-body">
 					<%= gravatar_for current_user %>
 					<h1><%= current_user.name %></h1>
 					<%= current_user.email %>
 				</div>
-				
-				
-
 			</div>	
-
-				
-
 		</div>
 
-
 		<div class="col-8">
-			<div class="card bg-info">
+			<div class="card bg-light act_h">
 				<div class="card-body">
-					<h2 class = "border-bottom pb-4">Activity</h2>
-					
+					<h2 class = "border-bottom pb-4 text-center">Activity</h2>
+					<%= render 'shared/feed' %>
 				</div>
+				
 
 			</div>
 

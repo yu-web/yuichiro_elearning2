@@ -16,6 +16,8 @@ class User < ApplicationRecord
 
   has_many :lessons, dependent: :destroy
 
+  has_many :activities,dependent: :destroy
+
   def lesson_taken(cat_id)
     lesson = lessons.find_by(category_id: cat_id)
   end

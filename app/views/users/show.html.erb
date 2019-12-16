@@ -2,7 +2,7 @@
 <h1>Current user profile</h1>
 	<div class="row">
 		<div class="col-4">
-			<div class="card mb-3 bg-info">
+			<div class="card mb-3 bg-light">
 				<div class="card-body text-center">
 					<%= gravatar_for @user %>
 					<h1><%= @user.name %></h1>
@@ -31,15 +31,16 @@
 					<% end %>
 			</div>	
 
-				<div class="text-center"><%= link_to "back",users_path,class: "btn btn-dark btn-sm backbtn" %></div>
+				<div class="text-center"><%= link_to "To the users list page",users_path,class: "btn btn-dark btn-sm backbtn" %></div>
 
 		</div>
 
 
 		<div class="col-8">
-			<div class="card bg-info">
+			<div class="card bg-light">
 				<div class="card-body">
-					<h2 class = "border-bottom pb-4">Activity</h2>
+					<h2 class = "border-bottom pb-4 text-center">Activity</h2>
+					<%= render 'shared/feed' %>
 					
 				</div>
 
