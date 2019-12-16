@@ -6,6 +6,7 @@ class AnswersController < ApplicationController
 
     if @lesson.next_word.nil?
       @lesson.update(result: @lesson.lesson_result)
+      @lesson.create_activity(user: current_user)
       redirect_to lesson_url(id: @lesson)
     end
   end
